@@ -1,0 +1,44 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(DT) # Data Tables
+```
+
+```{r}
+mpg
+```
+
+```{r}
+mpg %>% datatable()
+```
+
+```{r}
+mpg %>% datatable(rownames=F)
+```
+
+```{r}
+mpg %>% datatable(rownames=F) %>% formatCurrency("displ",currency = "£",digits=2)
+```
+
+```{r}
+mpg$cty %>% summary()
+```
+
+```{r}
+ctyPercentile <- mpg$cty %>% quantile(c(.25,.75))
+```
+
+```{r}
+mpg %>% datatable(rownames=F) %>% formatCurrency("displ",currency = "£",digits=2) %>% formatStyle("cty",backgroundColor = styleInterval(ctyPercentile,c("green","yellow","red")),color = styleInterval(ctyPercentile,c("white","blue","white")))
+```
+
+```{r}
+mpg %>% datatable(rownames=F) %>% formatCurrency("displ",currency = "£",digits=2) %>% formatStyle("cty",backgroundColor = styleInterval(ctyPercentile,c("green","yellow","red")),color = styleInterval(ctyPercentile,c("white","blue","white"))) %>% formatStyle("hwy",background=styleColorBar(mpg$hwy,"steelblue"))
+```
+
+
+
