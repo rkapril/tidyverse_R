@@ -1,0 +1,37 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Data
+geom - chart types
+Aesthetics - Properties applied to the chart
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+mpg
+```
+
+```{r}
+ggplot(mpg) + geom_point(mapping=aes(x = displ,y = hwy,color=class))
+```
+
+```{r}
+ggplot(mpg) + geom_point(mapping=aes(x = displ,y = hwy,size=class))
+```
+
+```{r}
+ggplot(mpg) + geom_point(mapping=aes(x = displ,y = hwy,shape=class))
+```
+
+```{r}
+ggplot(mpg) + geom_point(mapping=aes(x = displ,y = hwy,alpha=class))
+```
+
+```{r}
+ggplot(mpg) + geom_point(mapping=aes(x = displ,y = hwy,color=class,size=year,alpha=model,shape=drv))
+```
+
