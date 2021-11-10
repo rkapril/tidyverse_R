@@ -1,0 +1,30 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+library(forecast)
+library(highcharter)
+```
+
+```{r}
+mpg
+```
+
+```{r}
+hchart(mpg,"scatter",hcaes(x=displ,y=hwy,group=class))
+```
+
+```{r}
+forecast(AirPassengers) %>% hchart()
+```
+
+```{r}
+forecast(AirPassengers) %>% plot()
+```
+
+
+
+
