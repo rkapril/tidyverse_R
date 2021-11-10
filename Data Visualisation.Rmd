@@ -1,0 +1,44 @@
+---
+title: "Data Visualisation"
+output: html_notebook
+---
+
+R Data Visualizations options
+
+- Built in Plot() function
+  + Predefined visualization
+  + No parameters required
+  
+- ggplot
+  + The building blocks for any static visualization
+  
+- HTML Widgets
+  + Interactive Visualization
+  + Production ready for the web
+  
+```{r}
+library(tidyverse)
+library(forecast)
+```
+
+```{r}
+cars
+```
+
+```{r}
+cars %>% plot()
+```
+
+```{r}
+forecast(AirPassengers)
+```
+
+```{r}
+forecast(AirPassengers) %>% plot()
+```
+
+Grammar Graphics (ggplot)
+
+
+
+
