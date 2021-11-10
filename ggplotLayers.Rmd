@@ -1,0 +1,21 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+ggplot(mpg,mapping=aes(x=displ,y=hwy)) + geom_jitter(mapping=aes(color=class)) + geom_smooth() + annotate("rect",xmin=1.5,xmax=2,ymin=40,ymax=45,color="red",alpha=0.3) + annotate("text",x=3.5,y=43,label="Let's highlight these outliers")
+```
+
+```{r}
+ggplot(mpg,mapping=aes(x=displ,y=hwy)) + geom_jitter(mapping=aes(color=class)) + geom_smooth() + annotate("rect",xmin=1.5,xmax=2,ymin=40,ymax=45,color="red",alpha=0.3) + annotate("text",x=3.5,y=43,label="Let's highlight these \n outliers") + ggtitle("Let's label our chart","Add your subtitle here")
+```
+
+
+
+
+
