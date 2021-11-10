@@ -1,0 +1,49 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+ggplot(mpg) + geom_point(mapping=aes(x=displ,y=hwy))
+```
+
+```{r}
+ggplot(mpg) + geom_bar(mapping=aes(x=displ))
+```
+
+```{r}
+ggplot(mpg) + geom_col(mapping=aes(x=displ,y=hwy))
+```
+
+```{r}
+ggplot(mpg) + geom_col(mapping=aes(x=displ,y=hwy,fill=class))
+```
+
+```{r}
+ggplot(mpg) + geom_boxplot(mapping=aes(x=class,y=hwy))
+```
+
+```{r}
+ggplot(mpg) + geom_text(mapping=aes(x=displ,y=hwy,label=class),check_overlap = T)
+```
+
+```{r}
+ggplot(mpg) + geom_jitter(mapping=aes(x=displ,y=hwy))
+```
+
+```{r}
+ggplot(mpg) + geom_smooth(mapping=aes(x=displ,y=hwy))
+```
+
+```{r}
+ggplot(mpg) + geom_smooth(mapping=aes(x=displ,y=hwy),method="lm")
+```
+
+```{r}
+ggplot(mpg) + geom_smooth(mapping=aes(x=displ,y=hwy),method="gam")
+```
+
